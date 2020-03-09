@@ -1,0 +1,9 @@
+$black: #000000;
+$sharkBlue: rgb(66, 143, 216);
+$white: #ffffff;
+
+$AppHeaderHeight: 128px;
+$TopNavHeight: 48px;
+$viewTitleHeight:40px;
+/* needs to match the 3 above */
+$viewMainHeight: calc(100vh - 132px - 48px - 40px);
