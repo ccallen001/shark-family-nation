@@ -3,7 +3,7 @@
     <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/artists">Artists</router-link>
-      <router-link to="/daily-positive-message">Daily Positive Message</router-link>
+      <router-link to="/daily-positive-message">DPM</router-link>
     </nav>
   </div>
 </template>

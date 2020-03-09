@@ -11,8 +11,8 @@
       <h3 class="artists-accordian-artist-name">{{ artist.name }}</h3>
     </div>
 
-    <audio ref="click">
-      <source src="@/assets/audio/click.mp3" />
+    <audio ref="splash">
+      <source src="@/assets/audio/splash.wav" />
     </audio>
   </div>
 </template>
@@ -46,12 +46,12 @@
     padding: 8px;
     height: 100%;
     background: linear-gradient(to right, $black, rgba($black, 0.85));
-    transition: flex 333ms linear;
+    transition: flex 200ms ease-out;
 
     .artists-accordian-artist-name {
       writing-mode: vertical-rl;
       text-orientation: upright;
-      text-shadow: 0 1px 2px $black, 0 1px 8px $black, -1px 0 16px $sharkBlue;
+      text-shadow: 0 1px 2px $black, 0 1px 4px $black, -1px 0 4px $sharkBlue;
       cursor: pointer;
     }
   }
@@ -87,13 +87,17 @@ export default {
   }),
   methods: {
     flex(artist) {
-      this.$refs.click.play();
-      // window.location.hash = artist;
+      const splash = this.$refs.splash;
+      splash.play();
+      setTimeout(() => {
+        splash.pause();
+        splash.currentTime = 0;
+      }, 200);      
 
       const refs = this.$refs;
 
       for (let ref in refs) {
-        if (ref !== "click") {
+        if (ref !== "splash") {
           refs[ref][0].style.flex = 1;
         }
       }

@@ -37,7 +37,7 @@
     .img-container {
       @keyframes comeIn {
         to {
-          transform: rotate(720deg) scale(1);
+          transform: rotate(1080deg) scale(1);
         }
       }
 
